@@ -9,12 +9,6 @@ def go_to_login_page(browser):
     page.open()
     page.go_to_login_page()
 
-def test_guest_can_go_to_login_page(browser):
-    """гость может перейти на страницу входа"""
-    link = "http://selenium1py.pythonanywhere.com/"
-    browser.get(link)
-    go_to_login_page(browser)
-
 def test_guest_should_see_login_link(browser):
     """Ссылка на логин находится на странице."""
     link = "http://selenium1py.pythonanywhere.com/"
@@ -22,24 +16,12 @@ def test_guest_should_see_login_link(browser):
     page.open()
     page.should_be_login_link()
 
-def test_guest_should_see_correct_url(browser):
-    """корректный url адрес"""
-    link = "http://selenium1py.pythonanywhere.com/ru/accounts/login/"
-    page = LoginPage(browser, link)
+def test_guest_can_go_to_login_page(browser):
+    """гость может перейти на страницу входа"""
+    link = "http://selenium1py.pythonanywhere.com/"
+    page = MainPage(browser, link)
     page.open()
-    page.should_be_login_url()
+    page.go_to_login_page()
+    login_page = LoginPage(browser, browser.current_url)
+    login_page.should_be_login_page()
     
-def test_guest_should_see_login_form(browser):
-    """Форма логина находится на странице."""
-    link = "http://selenium1py.pythonanywhere.com/ru/accounts/login/"
-    page = LoginPage(browser, link)
-    page.open()
-    page.should_be_login_form()
-
-def test_guest_should_see_register_form(browser):
-    """Форма регистрации находится на странице."""
-    link = "http://selenium1py.pythonanywhere.com/ru/accounts/login/"
-    page = LoginPage(browser, link)
-    page.open()
-    page.should_be_register_form()
-
