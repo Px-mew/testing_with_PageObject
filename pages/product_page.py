@@ -34,9 +34,6 @@ class ProductPage(BasePage):
     def book_message_title(self):
         self.message_book_title = self.browser.find_element(*ProductPageLocators.BOOK_MASSAGE_TITLE)
         self.book_title = self.browser.find_element(*ProductPageLocators.BOOK_TITLE)
-        self.inp = self.browser.find_element(By.CSS_SELECTOR, "#id_q")
-        self.inp.send_keys(self.message_book_title.text)
-        time.sleep(20)
         assert self.book_title.text == self.message_book_title.text, "Book title and message book title are different"
         
 

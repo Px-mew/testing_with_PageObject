@@ -1,5 +1,5 @@
 from selenium.common.exceptions import NoAlertPresentException # в начале файла
-from pages.product_page import ProductPage
+from .pages.product_page import ProductPage
 import pytest
 
 @pytest.mark.parametrize('link', ["http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0",
