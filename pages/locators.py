@@ -14,4 +14,13 @@ class ProductPageLocators():
     BOOK_PRICE = (By.CSS_SELECTOR, ".product_main .price_color")
     BOOK_TITLE = (By.CSS_SELECTOR, "div.product_main h1")
     BOOK_MASSAGE_TITLE = (By.CSS_SELECTOR, "div.alertinner strong")
-    #messages > div:nth-child(1) > div > strong
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages div:nth-child(1)")
+
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    CART_LINK = (By.CSS_SELECTOR, "#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span > a")
+
+class BasketPageLocators():
+    PRODUCT_IN_CART = (By.CSS_SELECTOR,"#content_inner > div.basket-title.hidden-xs > div > h2")
+    MESSAGE_CART_IS_EMPTY = (By.CSS_SELECTOR,"#content_inner > p")
